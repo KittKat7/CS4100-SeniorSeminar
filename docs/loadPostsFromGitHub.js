@@ -19,7 +19,7 @@ async function getRemoteContent(url) {
 		}
 		var list = await JSON.parse(cachedContent);
 	} catch (e) {
-		return await fetch(url).then(function (response) { return response; })
+		return await fetch(url).then(function (response) { return response; });
 	}
 }
 
