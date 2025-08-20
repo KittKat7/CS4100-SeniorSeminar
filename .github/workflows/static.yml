@@ -35,14 +35,14 @@ jobs:
           path: './repo/'
       - name: Compile site
         run: |
-          ls ./repo/posts/ > ./repo/docs/contentindex.txt
+          ls ./repo/posts/ > ./repo/contentindex.txt
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './repo/docs/'
+          path: './repo/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

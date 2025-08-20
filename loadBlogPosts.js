@@ -31,7 +31,7 @@ async function addBlogPosts(section, user, repo, path) {
 		const post = document.createElement("div");
 		post.classList.add("blog-post");
 
-		const postData = await (await getRemoteContent("../posts/" + postURLs[i])).text();
+		const postData = await (await getRemoteContent("./posts/" + postURLs[i])).text();
 
 		var converter = new showdown.Converter(),
 			text = postData,
