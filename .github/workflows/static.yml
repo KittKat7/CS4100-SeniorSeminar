@@ -27,16 +27,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestt
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           path: './repo/'
-      - name: Set up python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
       - name: Compile site
         run: |
           ls ./repo/posts/ > ./repo/docs/contentindex.txt
