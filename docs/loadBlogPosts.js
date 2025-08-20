@@ -1,26 +1,23 @@
 
 
 async function getBlogPostList(user, repo, path) {
-	const folderURL = "https://api.github.com/repos/" + user + "/" + repo + "/contents/" + path;
+	const folderURL = "./contentindex.txt";
 
-	const data = await (await getRemoteContent(folderURL)).json();
+	const data = await (await getRemoteContent(folderURL)).text();
+	const contentList = data.split("\n");
 	var list = [];
-	for (var i = 0; i < data.length; i++) {
-		list.push(data[i].download_url);
+	for (var i = 0; i < contentList.length; i++) {
+		if (contentList[i].length == 0) {
+			continue;
+		}
+		list.push(contentList[i]);
 	}
+	console.log(list);
 	return list;
 }
 
 async function getRemoteContent(url) {
-	var cachedContent = localStorage.getItem(url);
-	try {
-		if (cachedContent == null) {
-			throw new Error();
-		}
-		var list = await JSON.parse(cachedContent);
-	} catch (e) {
-		return await fetch(url).then(function (response) { return response; });
-	}
+	return await fetch(url, { cache: "no-store" }).then(function (response) { return response; });
 }
 
 async function addBlogPosts(section, user, repo, path) {
@@ -34,7 +31,7 @@ async function addBlogPosts(section, user, repo, path) {
 		const post = document.createElement("div");
 		post.classList.add("blog-post");
 
-		const postData = await (await getRemoteContent(postURLs[i])).text();
+		const postData = await (await getRemoteContent("../posts/" + postURLs[i])).text();
 
 		var converter = new showdown.Converter(),
 			text = postData,
