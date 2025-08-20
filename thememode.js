@@ -17,4 +17,5 @@ function toggleDarkMode() {
 	darkmode !== "active" ? enableDarkMode() : disableDarkMode();
 }
 
+if (darkmode == null) darkmode = "active";
 darkmode === "active" ? enableDarkMode() : disableDarkMode();
