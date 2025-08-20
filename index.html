@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en_us">
+
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+	<script src="/loadPostsFromGitHub.js"></script>
+	<title>CS4100 Blog</title>
+</head>
+
+<body>
+	<main>
+		<h2>Senior Seminar Blog Posts</h2>
+
+		<p>
+			Blog posts from App State's CS4100 (Senior Seminar) class.
+		</p>
+
+		<hr>
+
+		<div id="posts">
+
+		</div>
+
+
+	</main>
+
+</body>
+<script>addBlogPosts("posts", "KittKat7", "CS4100-SeniorSeminar", "posts")</script>
+
+</html>
+
+<!-- curl -X GET "https://api.github.com/repos/KittKat7/CS4100-SeniorSeminar/contents/" -->
