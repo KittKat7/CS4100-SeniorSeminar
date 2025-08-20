@@ -1,0 +1,11 @@
+#theme-switch * {
+	vertical-align: middle;
+}
+
+[data-bs-theme="light"] #theme-switch :first-child {
+	display: none;
+}
+
+[data-bs-theme="dark"] #theme-switch :last-child {
+	display: none;
+}

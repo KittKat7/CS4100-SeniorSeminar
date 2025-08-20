@@ -12,7 +12,15 @@ async function getBlogPostList(user, repo, path) {
 }
 
 async function getRemoteContent(url) {
-	return await fetch(url).then(function (response) { return response; })
+	var cachedContent = localStorage.getItem(url);
+	try {
+		if (cachedContent == null) {
+			throw new Error();
+		}
+		var list = await JSON.parse(cachedContent);
+	} catch (e) {
+		return await fetch(url).then(function (response) { return response; })
+	}
 }
 
 async function addBlogPosts(section, user, repo, path) {
