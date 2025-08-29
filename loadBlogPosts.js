@@ -29,7 +29,7 @@ async function addBlogPosts(section, user, repo, path) {
 
 	for (var i = 0; i < postURLs.length; i++) {
 		const post = document.createElement("div");
-		post.classList.add("blog-post");
+		post.classList.add("blog-post", "border", "border-3", "rounded-4", "p-3", "my-3");
 
 		const postData = await (await getRemoteContent("./posts/" + postURLs[i])).text();
 
@@ -45,6 +45,6 @@ async function addBlogPosts(section, user, repo, path) {
 
 		post.innerHTML = html;
 
-		section.appendChild(post);
+		section.prepend(post);
 	}
 }
