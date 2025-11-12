@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #0a0a2a 0%, #000 100%);
+  color: #e0e0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  background: rgba(20, 20, 60, 0.8);
+  border: 2px solid #4b4bff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 20px #4b4bff33;
+}
+
+h1 {
+  text-align: center;
+  color: #7f7fff;
+  text-shadow: 0 0 8px #4b4bff;
+}
+
+#story {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+#choices button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  background: linear-gradient(90deg, #1f1f8a, #4b4bff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#choices button:hover {
+  background: linear-gradient(90deg, #4b4bff, #1f1f8a);
+  transform: scale(1.03);
+}
+
+.return-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(40, 40, 100, 0.8);
+  color: #a0a0ff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #4b4bff55;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.return-btn:hover {
+  background: rgba(80, 80, 160, 0.9);
+  color: #fff;
+  transform: scale(1.05);
+}
