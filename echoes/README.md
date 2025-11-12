@@ -1,0 +1,1 @@
+Echoes of Tomorrow was created entirely using ChatGPT.
